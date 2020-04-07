@@ -6,7 +6,7 @@ The task provides three files, _bin_, _enc_ and _d_. The challenge mentions a my
 
 ###### Summary
 
-The challenge involves decrypting the _enc_ file by successfully predicting the output of the **D**ual **E**lliptic **C**urve **D**eterministic **R**andom Number **G**enerator (or short, Dual EC DRBG).
+The challenge involves decrypting the _enc_ file by successfully predicting the output of the **D**ual **E**lliptic **C**urve **D**eterministic **R**andom ***B***it **G**enerator (or short, Dual EC DRBG).
 
 ###### Details
 
