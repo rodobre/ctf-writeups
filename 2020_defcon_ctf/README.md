@@ -10,7 +10,7 @@ What's the trick to not be foooled?
 
 Files provided:
 
-![Challenge file](/2020_defcon_ctf/service.sage)
+[Challenge file](/2020_defcon_ctf/service.sage)
 
 ### Walkthrough
 
