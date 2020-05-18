@@ -10,11 +10,11 @@ What's the trick to not be foooled?
 
 Files provided:
 
-![Challenge file](/service.sage)
+![Challenge file](/2020_defcon_ctf/service.sage)
 
 ### Walkthrough
 
-Two great resources which have helped me significantly in solving this challenge can be found at [here<sup>1</sup>](https://csrc.nist.gov/csrc/media/events/workshop-on-elliptic-curve-cryptography-standards/documents/papers/session1-miele-paper.pdf) and [here<sup>2</sup>](http://www.monnerat.info/publications/anomalous.pdf).
+Two great resources which have helped me significantly in solving this challenge can be found [here<sup>1</sup>](https://csrc.nist.gov/csrc/media/events/workshop-on-elliptic-curve-cryptography-standards/documents/papers/session1-miele-paper.pdf) and [here<sup>2</sup>](http://www.monnerat.info/publications/anomalous.pdf).
 
 The challenge requires the user to provide the construction parameters for a Weierstrass form Elliptic Curve.
 ![y^2 = x^3 + ax + b](https://render.githubusercontent.com/render/math?math=y%5E2%20%3D%20x%5E3%20%2B%20ax%20%2B%20b)
@@ -24,7 +24,7 @@ This curve is required to have the order equal to the prime of the Finite field 
 
 The sage script then performs Smart's attack on our anomalous curve in order to solve the Elliptic Curve Discrete Logarithm Problem, by reducing the Elliptic Curve to a ![$p$](https://render.githubusercontent.com/render/math?math=%24p%24)-adic Elliptic Curve, thus solving the ECDLP in linear time.
 
-As the answer [here<sup>3</sup>](https://crypto.stackexchange.com/posts/70508/revisions) suggests, the edge case for Smart's attack is when the curve over ![\mathbb{Q}_p](https://render.githubusercontent.com/render/math?math=%5Cmathbb%7BQ%7D_p) that the algorithm lifts to, happens to be a canonical basis. Thus, no further information can be gained about the curve, leading the algorithm to fail at retrieving the private key (the solution to the discrete logarithm).
+As the answer [here<sup>3</sup>](https://crypto.stackexchange.com/posts/70508/revisions) suggests, the edge case for Smart's attack is when the curve over ![\mathbb{Q}_p](https://render.githubusercontent.com/render/math?math=%5Cmathbb%7BQ%7D_p) that the algorithm lifts to, happens to be a canonical lift. Thus, no further information can be gained about the curve, leading the algorithm to fail at retrieving the private key (the solution to the discrete logarithm).
 
 In order to generate an anomalous curve, however, one must pick a suitable discriminant as per the quoted references suggest. For this challenge, the discriminant ![D = 3](https://render.githubusercontent.com/render/math?math=D%20%3D%203) was chosen.
 
@@ -49,5 +49,5 @@ The script receives the generator provided by the server and returns a random pu
 
 ### Alternate solution
 
-The alternate solution to this challenge involves no mathematics, and it can be found  ![here](https://hxp.io/blog/72/DEFCON-CTF-Quals-2020-notbefoooled/), a great case study for exploitation through unintended weaknesses.
+The alternate solution to this challenge involves no mathematics, and it can be found  [here](https://hxp.io/blog/72/DEFCON-CTF-Quals-2020-notbefoooled/), a great case study for exploitation through unintended weaknesses.
 
